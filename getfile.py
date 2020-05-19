@@ -1,4 +1,5 @@
 import requests
+import base64
 from getpass import getpass
 
 username = input('Enter your name: ')
@@ -13,4 +14,6 @@ file_path = 'README.md'
 string = f'https://api.github.com/repos/{username}/{repo}/contents/{file_path}'
 
 file_response = requests.get(string)
-print(file_response.json())
+
+file_bytes = base64.b64decode(file_response.json()['content'])
+print(file_bytes)
