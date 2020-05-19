@@ -16,4 +16,5 @@ string = f'https://api.github.com/repos/{username}/{repo}/contents/{file_path}'
 file_response = requests.get(string)
 
 file_bytes = base64.b64decode(file_response.json()['content'])
-print(file_bytes)
+file_str = file_bytes.decode('utf-8')
+print(file_str)
