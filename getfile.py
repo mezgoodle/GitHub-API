@@ -9,6 +9,7 @@ repo = input('Repo: ')
 # If you want only readme file
 # GET /repos/:owner/:repo/readme
 # If you want other file
+# file_path = input('Enter path to file: ')
 file_path = 'README.md'
 
 string = f'https://api.github.com/repos/{username}/{repo}/contents/{file_path}'
